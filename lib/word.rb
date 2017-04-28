@@ -38,4 +38,10 @@ class Word
     @@words.sort_by!(&:word)
   end
 
+  def self.random_word
+    random_array = @@words.shuffle
+    word = random_array[0]
+    word
+  end
+
 end

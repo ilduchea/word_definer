@@ -73,4 +73,20 @@ describe 'Word' do
     end
   end
 
+  describe '.random_word' do
+    it 'returns a random word' do
+      word = Word.new({:word => "qwerty"})
+      word.save()
+      word2 = Word.new({:word => "test"})
+      word2.save()
+      word3 = Word.new({:word => "animal"})
+      word3.save()
+      srand 0
+      random_word1 = Word.random_word
+      srand 1
+      random_word2 = Word.random_word
+      expect(random_word1).not_to eq (random_word2)
+    end
+  end
+
 end
