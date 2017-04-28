@@ -1,6 +1,6 @@
 class Word_definer
   @@words = []
-  attr_accessor(:word)
+  attr_accessor(:word, :id)
 
   def initialize (atributes)
     @word = atributes.fetch(:word)
@@ -19,8 +19,14 @@ class Word_definer
     @@words = []
   end
 
-  def id
-    @id
+  def self.find (id)
+    found_word = nil
+    @@words.each do |word|
+      if word.id().eql?(id)
+        found_word = word
+      end
+    end
+    found_word
   end
 
 end

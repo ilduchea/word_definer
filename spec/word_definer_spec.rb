@@ -36,4 +36,15 @@ describe 'Word_definer' do
       expect(word.id).to eq ("word1")
     end
   end
+
+  describe(".find") do
+    it("returns a word by its id") do
+      word = Word_definer.new({:word => "test"})
+      word.save()
+      word2 = Word_definer.new({:word => "test2"})
+      word2.save()
+      expect(Word_definer.find(word.id())).to(eq(word))
+    end
+  end
+
 end
