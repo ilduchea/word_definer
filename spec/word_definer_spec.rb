@@ -13,6 +13,14 @@ describe 'Word_definer' do
     end
   end
 
+  describe '#save' do
+    it 'will add a word to the words array' do
+      word = Word_definer.new({:word => "test"})
+      word.save
+      expect(Word_definer.all).to eq ([word])
+    end
+  end
+
   # describe '#id' do
   #   it 'returns a unique id for each instance of Word_definer' do
   #     word = Word_definer.new({:word => "test"})
