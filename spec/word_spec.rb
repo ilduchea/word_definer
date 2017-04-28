@@ -1,4 +1,5 @@
 require 'word'
+require 'definition'
 require 'rspec'
 require 'pry'
 
@@ -37,13 +38,22 @@ describe 'Word' do
     end
   end
 
-  describe(".find") do
-    it("returns a word by its id") do
+  describe '.find' do
+    it 'returns a word by its id' do
       word = Word.new({:word => "test"})
       word.save()
       word2 = Word.new({:word => "test2"})
       word2.save()
-      expect(Word.find(word.id())).to(eq(word))
+      expect(Word.find(word.id)).to eq (word)
+    end
+  end
+
+  describe '#add_definition' do
+    it 'adds a definition to the word' do
+      word = Word.new({:word => "test"})
+      definition = Definition.new({:definition => "test"})
+      word.add_definition(definition)
+      expect(word.definitions).to eq ([definition])
     end
   end
 
