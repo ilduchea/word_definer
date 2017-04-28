@@ -1,4 +1,4 @@
-class Word_definer
+class Word
   @@words = []
   attr_accessor(:word, :id)
 
