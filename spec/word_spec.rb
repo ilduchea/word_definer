@@ -89,4 +89,16 @@ describe 'Word' do
     end
   end
 
+  describe '.search' do
+    it 'returns a word by its word' do
+      word = Word.new({:word => "qwerty"})
+      word.save()
+      word2 = Word.new({:word => "test"})
+      word2.save()
+      word3 = Word.new({:word => "animal"})
+      word3.save()
+      expect(Word.search(word.word)).to eq (word)
+    end
+  end
+
 end

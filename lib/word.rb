@@ -41,7 +41,16 @@ class Word
   def self.random_word
     random_array = @@words.shuffle
     word = random_array[0]
-    word
+  end
+
+  def self.search (search_value)
+    found_word = nil
+    @@words.each do |word|
+      if word.word().eql?(search_value)
+        found_word = word
+      end
+    end
+    found_word
   end
 
 end
