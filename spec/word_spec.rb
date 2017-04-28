@@ -4,6 +4,10 @@ require 'rspec'
 require 'pry'
 
 describe 'Word' do
+  before() do
+    Word.clear()
+  end
+
   it 'intializes a new word to be defined' do
     expect(word = Word.new({:word => "test"})).to eq (word)
   end
@@ -51,7 +55,7 @@ describe 'Word' do
   describe '#add_definition' do
     it 'adds a definition to the word' do
       word = Word.new({:word => "test"})
-      definition = Definition.new({:definition => "test"})
+      definition = Definition.new({:def => "test"})
       word.add_definition(definition)
       expect(word.definitions).to eq ([definition])
     end

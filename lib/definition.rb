@@ -1,9 +1,9 @@
 class Definition
   @@definitions = []
-  attr_accessor(:definition, :id)
+  attr_accessor(:def, :id)
 
   def initialize (atributes)
-    @definition = atributes.fetch(:definition)
+    @def = atributes.fetch(:def)
     @id = "definition".+((@@definitions.length() + 1).to_s)
   end
 

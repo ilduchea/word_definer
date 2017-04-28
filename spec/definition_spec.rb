@@ -3,8 +3,12 @@ require 'rspec'
 require 'pry'
 
 describe 'Definition' do
+  before() do
+    Definition.clear()
+  end
+  
   it 'intializes a new definition to be defined' do
-    expect(definition = Definition.new({:definition => "test"})).to eq (definition)
+    expect(definition = Definition.new({:def => "test"})).to eq (definition)
   end
 
   describe '.all' do
@@ -15,7 +19,7 @@ describe 'Definition' do
 
   describe '#save' do
     it 'will add a definition to the definitions array' do
-      definition = Definition.new({:definition => "test"})
+      definition = Definition.new({:def => "test"})
       definition.save
       expect(Definition.all).to eq ([definition])
     end
@@ -23,7 +27,7 @@ describe 'Definition' do
 
   describe '.clear' do
     it 'will empty the definitions array' do
-      definition = Definition.new({:definition => "test"})
+      definition = Definition.new({:def => "test"})
       definition.save
       Definition.clear
       expect(Definition.all).to eq ([])
@@ -32,16 +36,16 @@ describe 'Definition' do
 
   describe '#id' do
     it 'returns a unique id for each instance of Definition' do
-      definition = Definition.new({:definition => "test"})
+      definition = Definition.new({:def => "test"})
       expect(definition.id).to eq ("definition1")
     end
   end
 
   describe(".find") do
     it("returns a definition by its id") do
-      definition = Definition.new({:definition => "test"})
+      definition = Definition.new({:def => "test"})
       definition.save()
-      definition2 = Definition.new({:definition => "test2"})
+      definition2 = Definition.new({:def => "test2"})
       definition2.save()
       expect(Definition.find(definition.id())).to(eq(definition))
     end
