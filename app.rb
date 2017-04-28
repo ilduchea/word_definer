@@ -29,8 +29,10 @@ get('/words/:id') do
 end
 
 post('/add_definition') do
-  definition = params.fetch('definition')
   @word = Word.find(params.fetch("id"))
-  @word.add_definition(definition)
+  definition = params.fetch('definition')
+  if definition.length > 0
+    @word.add_definition(definition)
+  end
   redirect("/words/#{@word.id()}")
 end

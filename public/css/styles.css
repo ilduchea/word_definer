@@ -1,0 +1,62 @@
+body {
+  font-family: 'Indie Flower', cursive;
+  font-size: 2em;
+  font-weight: bold;
+  background: url('../img/green-background.jpg') no-repeat;
+  background-size: cover;
+  color: #81D2C7;
+}
+
+.container {
+  margin-bottom: 1%;
+}
+.jumbotron {
+  text-align: center;
+  background-color: #81D2C7;
+  color: #416788;
+}
+
+.jumbotron h1 {
+  font-weight: 900;
+  font-size: 6em;
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 3em;
+}
+
+h3 {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.width {
+  width: 33%;
+}
+
+a {
+  color: #81D2C7;
+}
+
+.buttons {
+  padding-top: 6px;
+  background-color: #81D2C7;
+  color: #416788;
+}
+
+.buttons:hover, input, textarea {
+  background-color: #416788;
+  color: #81D2C7;
+}
+
+.danger-button {
+  padding-top: 6px;
+  background-color: #A30000;
+  color: #81D2C7;
+}
+
+.danger-button:hover {
+  background-color: #81D2C7;
+  color: #A30000;
+}
