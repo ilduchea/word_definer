@@ -17,3 +17,8 @@ post('/word') do
   @word.save
   redirect('/')
 end
+
+post('/clear') do
+  Word.clear
+  redirect('/')
+end
