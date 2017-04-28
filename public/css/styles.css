@@ -60,3 +60,11 @@ a {
   background-color: #81D2C7;
   color: #A30000;
 }
+
+.max-width {
+  width: 108%;
+}
+
+.float-right {
+  float: right;
+}

@@ -23,6 +23,22 @@ post('/clear') do
   redirect('/')
 end
 
+get('/search') do
+  word = params.fetch('search')
+  @word = Word.search(word)
+  redirect("/words/#{@word.id()}")
+end
+
+get('/random') do
+  @word = Word.random_word()
+  redirect("/words/#{@word.id()}")
+end
+
+post('/alphabetize') do
+  Word.alphabetize
+  redirect('/')
+end
+
 get('/words/:id') do
   @word = Word.find(params.fetch("id"))
   erb(:word)
@@ -35,4 +51,9 @@ post('/add_definition') do
     @word.add_definition(definition)
   end
   redirect("/words/#{@word.id()}")
+end
+
+get('/display_all') do
+  @words = Word.all
+  erb(:all_words)
 end

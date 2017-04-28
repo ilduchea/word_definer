@@ -7,7 +7,7 @@ describe('the Word Definer paths', {:type => :feature}) do
   before() do
     Word.clear()
   end
-  
+
   it('goes to home page and creates a word') do
     visit('/')
     fill_in('word', :with => 'test')
@@ -39,5 +39,18 @@ describe('the Word Definer paths', {:type => :feature}) do
     fill_in('definition', :with => 'def def def def')
     click_on('Add Definition')
     expect(page).to have_content('def def def def')
+  end
+
+  it('returns the word searched for') do
+    visit('/')
+    fill_in('word', :with => 'test')
+    click_button('Add Word')
+    fill_in('word', :with => 'qwerty')
+    click_button('Add Word')
+    fill_in('word', :with => 'animal')
+    click_button('Add Word')
+    fill_in('search', :with => 'animal')
+    click_on('Search')
+    expect(page).to have_content('animal')
   end
 end

@@ -1,16 +1,39 @@
 <h2> Create Your Word </h2>
 <form action="/word" method="post">
-  <label for="word">Enter a Word:</label>
+  <label for="word">Enter a Word:</label><br>
   <input name="word" type="text" required>
-  <button type="submit" class="buttons">Add Word</button>
+  <button type="submit" class="buttons float-right">Add Word</button>
 </form>
 <hr>
-<h2>Words</h2>
-<ul>
-  <% @words.each() do |word| %>
-  <li><a href="/words/<%= word.id() %>"><%= word.word() %></a></li>
-  <% end %>
-</ul>
+
+<form action="/search" method="get">
+  <label for="search">Search for a Word:</label><br>
+  <input name="search" type="text" required>
+  <button type="submit" class="buttons float-right">Search</button>
+</form>
+<hr>
+<div class="row">
+  <form class="col-sm-6" action="/alphabetize" method="post">
+    <button type="submit" class="buttons">Alphabetize</button>
+  </form>
+  <form class="col-sm-6" action="/random" method="get">
+    <button type="submit" class="buttons float-right">Random Word</button>
+  </form>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-6">
+    <h2>Words</h2>
+    <ul>
+      <% @words.each() do |word| %>
+      <li><a href="/words/<%= word.id() %>"><%= word.word() %></a></li>
+      <% end %>
+    </ul>
+  </div>
+  <form class="col-sm-6" action="/display_all" method="get">
+    <button type="submit" class="buttons float-right">Display All</button>
+  </form>
+</div>
 <hr>
 <form action="/clear" method="post">
   <button class="danger-button" type="submit" name="clear">Remove all Words</button>
