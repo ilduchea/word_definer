@@ -22,3 +22,15 @@ post('/clear') do
   Word.clear
   redirect('/')
 end
+
+get('/words/:id') do
+  @word = Word.find(params.fetch("id"))
+  erb(:word)
+end
+
+post('/add_definition') do
+  definition = params.fetch('definition')
+  @word = Word.find(params.fetch("id"))
+  @word.add_definition(definition)
+  redirect("/words/#{@word.id()}")
+end

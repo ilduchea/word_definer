@@ -1,0 +1,22 @@
+<h2><%= @word.word %></h2>
+<h3>Definitions</h3>
+
+<ul>
+  <% @word.definitions().each do |definition|%>
+    <li>
+      <p>
+         <%= definition %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+<hr>
+
+<form action="/add_definition" method="post">
+  <input name='id' type='hidden' value='<%= @word.id() %>'>
+  <label for="definition">Enter a Definition:</label><br>
+  <textarea name="definition" rows="4" cols="40"></textarea><br>
+  <button type="submit" name="add_definition">Add Definition</button>
+</form>
+<hr>
+<a href="/"><button type="button" name="home">Home</button></a>

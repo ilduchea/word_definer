@@ -4,6 +4,10 @@ Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
 describe('the Word Definer paths', {:type => :feature}) do
+  before() do
+    Word.clear()
+  end
+  
   it('goes to home page and creates a word') do
     visit('/')
     fill_in('word', :with => 'test')
@@ -17,5 +21,23 @@ describe('the Word Definer paths', {:type => :feature}) do
     click_button('Add Word')
     click_button('Remove all Words')
     expect(page).to have_no_content('Hello')
+  end
+
+  it('goes to a words page via the home page') do
+    visit('/')
+    fill_in('word', :with => 'test')
+    click_button('Add Word')
+    click_on('test')
+    expect(page).to have_content('Definitions')
+  end
+
+  it('adds a definition to a word') do
+    visit('/')
+    fill_in('word', :with => 'test')
+    click_button('Add Word')
+    click_on('test')
+    fill_in('definition', :with => 'def def def def')
+    click_on('Add Definition')
+    expect(page).to have_content('def def def def')
   end
 end
