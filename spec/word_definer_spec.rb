@@ -30,10 +30,10 @@ describe 'Word_definer' do
     end
   end
 
-  # describe '#id' do
-  #   it 'returns a unique id for each instance of Word_definer' do
-  #     word = Word_definer.new({:word => "test"})
-  #     expect(word.id).to eq ("word1")
-  #   end
-  # end
+  describe '#id' do
+    it 'returns a unique id for each instance of Word_definer' do
+      word = Word_definer.new({:word => "test"})
+      expect(word.id).to eq ("word1")
+    end
+  end
 end

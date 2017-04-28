@@ -4,6 +4,7 @@ class Word_definer
 
   def initialize (atributes)
     @word = atributes.fetch(:word)
+    @id = "word".+((@@words.length() + 1).to_s)
   end
 
   def self.all
@@ -18,8 +19,8 @@ class Word_definer
     @@words = []
   end
 
-  # def id
-  #   @id
-  # end
+  def id
+    @id
+  end
 
 end
