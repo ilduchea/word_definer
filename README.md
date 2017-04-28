@@ -23,7 +23,7 @@ This site is designed for kids to create words and corrisponding definitions.
 
 ## Setup/Installation Requirements
 * Ensure connection to the Internet
-* Enter the following URL in your computer browser to access the active git hub link to this page:
+* Enter the following URL in your computer browser to access the active git hub link to this page: https://protected-escarpment-42450.herokuapp.com/
 OR
 * On a mac using spotlight search type in terminal
 * Once in terminal run the command: cd desktop
