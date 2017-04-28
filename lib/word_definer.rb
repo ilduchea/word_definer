@@ -2,7 +2,7 @@ class Word_definer
   @@words = []
   attr_accessor(:word)
 
-  define_method(:initialize) do |atributes|
+  def initialize (atributes)
     @word = atributes.fetch(:word)
   end
 
@@ -12,6 +12,10 @@ class Word_definer
 
   def save
     @@words.push(self)
+  end
+
+  def self.clear
+    @@words = []
   end
 
   # def id
