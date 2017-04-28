@@ -1,8 +1,8 @@
 # Word Definer
 
-#### _**A site to define words.**_, April 28, 2017
+#### _**A site to define words.**_
 
-#### _**By Tyler Stephenson**_
+#### _**By Tyler Stephenson, April 28, 2017**_
 
 ## Description
 This site is designed for kids to create words and corrisponding definitions.
