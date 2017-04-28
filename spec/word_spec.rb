@@ -61,4 +61,16 @@ describe 'Word' do
     end
   end
 
+  describe '.alphabetize' do
+    it 'sorts the words alphabetically' do
+      word = Word.new({:word => "qwerty"})
+      word.save()
+      word2 = Word.new({:word => "test"})
+      word2.save()
+      word3 = Word.new({:word => "animal"})
+      word3.save()
+      expect(Word.alphabetize()).to eq ([word3, word, word2])
+    end
+  end
+
 end

@@ -34,4 +34,8 @@ class Word
     @definitions.push(definition)
   end
 
+  def self.alphabetize
+    @@words.sort_by!(&:word)
+  end
+
 end
